@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login page</title>
+</head>
+<body>
+    <form action="admin/dashboard.html">
+        <div class="box">
+            <h2>Admin Login</h2>
+            <div class="input-box">
+                <input type="text" required id="admin" autocomplete="off">
+                <label>Admin-Name</label>
+            </div>
+            <div class="input-box">
+                <input type="password" required id="pass" autocomplete="off">
+                <label for="">Passwort</label>
+            </div>
+            <div class="subm">
+                <input type="submit" value="Anmeldung" disabled id="submit" >
+            </div>
+        </div>
+        <div class="claen-1">
+            <img src="3.svg">
+        </div>
+        <div class="claen">
+            <img src="SVG/Asset 4.svg" >
+        </div>
+    </form>
+    <script>
+        function alter(){
+            let admin = document.getElementById("admin").value;
+            let pass = document.getElementById("pass").value;
+            let submit = document.getElementById("submit");
+            if(pass.length >= 8 && admin.length != 0)
+            {
+                submit.removeAttribute("disabled");
+                console.log("pass");
+            }
+            else
+            {
+                submit.disabled=true;
+            }
+        }
+        document.getElementById("admin").addEventListener("input" , alter)
+        document.getElementById("pass").addEventListener("input" , alter)
+    </script>
+</body>
+</html>
